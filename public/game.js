@@ -30,7 +30,7 @@ class App {
     this.cars = new Cars(imageLoader)
     this.finish_line = new FinishLine(imageLoader)
     this.infoUpdater = new Information()
-    this.sound = new Sound('assets/soundtrack/Nyan_Cat.ogg')
+    this.sound = new Sound('assets/soundtrack/Nyan_Cat.mp3')
   }
 
   onmessage (m) {
