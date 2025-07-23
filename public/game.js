@@ -30,7 +30,7 @@ class App {
     this.cars = new Cars(imageLoader)
     this.finish_line = new FinishLine(imageLoader)
     this.infoUpdater = new Information()
-    this.sound = new Sound('assets/soundtrack/Nyan_Cat.ogg')
+    this.sound = new Sound('assets/soundtrack/Nyan_Cat.mp3')
   }
 
   onmessage(m) {
@@ -281,12 +281,14 @@ class Dashboard {
     for (const player of this.players) {
       if (player.lane === 0) {
         document.querySelector('#left.player .name').textContent = player.name
-        document.querySelector('#left.player .score').textContent = player.score
-      }
+        document.querySelector('#left.player .score').textContent = `Score: ${player.score}`
+        document.querySelector('#left.player .best_score').textContent = `Best Score: ${player.best_score}`
+        }
       if (player.lane === 1) {
         document.querySelector('#right.player .name').textContent = player.name
-        document.querySelector('#right.player .score').textContent = player.score
-      }
+        document.querySelector('#right.player .score').textContent = `Score: ${player.score}`
+        document.querySelector('#right.player .best_score').textContent = `Best Score: ${player.best_score}`
+        }
     }
   }
 }
