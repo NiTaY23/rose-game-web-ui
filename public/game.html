@@ -2,6 +2,7 @@ class App {
   client = null
   controller = null
   rate = null
+  best_score = null
   context = null
   dashboard = null
   track = null
@@ -277,15 +278,19 @@ class Dashboard {
   draw() {
     const text = this.timeleft < 10 ? `0${this.timeleft}` : this.timeleft.toString()
     document.querySelector('#time_left').textContent = text
-נ
+
     for (const player of this.players) {
       if (player.lane === 0) {
         document.querySelector('#left.player .name').textContent = player.name
         document.querySelector('#left.player .score').textContent = player.score
+        // שורה זו נחשפה כעת כדי להציג את הניקוד הגבוה ביותר
+        document.querySelector('#left.player .best_score').textContent = player.best_score
       }
       if (player.lane === 1) {
         document.querySelector('#right.player .name').textContent = player.name
         document.querySelector('#right.player .score').textContent = player.score
+        // שורה זו נחשפה כעת כדי להציג את הניקוד הגבוה ביותר
+        document.querySelector('#right.player .best_score').textContent = player.best_score
       }
     }
   }
